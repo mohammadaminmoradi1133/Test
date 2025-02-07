@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Camera Stream</title>
+</head>
+<body>
+  <video id="video1" width="320" height="240" autoplay></video>
+  <script>
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(function(stream) {
+        document.getElementById('video1').srcObject = stream;
+      })
+      .catch(function(error) {
+        console.log("Error accessing the camera: ", error);
+      });
+  </script>
+  <video id="video2" width="320" height="240" autoplay></video>
+  <script>
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(function(stream) {
+        document.getElementById('video2').srcObject = stream;
+      })
+      .catch(function(error) {
+        console.log("Error accessing the camera: ", error);
+      });
+  </script>
+</body>
+</html>
